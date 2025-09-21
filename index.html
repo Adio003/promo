@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promotion Spéciale - Anniversaire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #e6f2ff);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #ff4d4d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    #countdown {
+      font-size: 1.2em;
+      margin-top: 10px;
+      background: white;
+      color: #ff4d4d;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    .offer {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+    .offer:hover {
+      transform: scale(1.03);
+    }
+    .offer h2 {
+      color: #ff4d4d;
+      margin-top: 0;
+    }
+    .price {
+      font-size: 1.8em;
+      color: #28a745;
+      font-weight: bold;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 15px;
+      font-size: 1em;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      background: #25D366;
+      color: white;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #1ebe5c;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f1f1f1;
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎉 Offre Spéciale Anniversaire 🎉</h1>
+    <p>Profitez de mes cadeaux exceptionnels à prix réduit !</p>
+    <div id="countdown">⏳ Calcul du temps restant...</div>
+  </header>
+
+  <div class="container">
+
+    <div class="offer">
+      <h2>🚀 GPT-5 & Autres IA Premium</h2>
+      <p>Accédez à GPT-5 et d'autres modèles d'IA normalement payants, à un prix cadeau.</p>
+      <p class="price">👉 1500 FCFA seulement (5 premiers) !</p>
+      <a class="btn" href="https://wa.me/22990110479?text=Bonjour!%20Je%20suis%20intéressé%20par%20l'offre%20GPT-5%20et%20IA.">📲 Contact WhatsApp</a>
+    </div>
+
+    <div class="offer">
+      <h2>🎬 Abonnement Netflix</h2>
+      <p>Profitez de vos films et séries préférés en illimité avec Netflix.</p>
+      <p class="price">👉 2500 FCFA seulement !</p>
+      <a class="btn" href="https://wa.me/22990110479?text=Bonjour!%20Je%20veux%20profiter%20de%20l'offre%20Netflix.">📲 Contact WhatsApp</a>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 | Offre Anniversaire | Contact WhatsApp : <strong>90110479</strong><br>
+    🔥 Fin de l'offre : <strong>30 septembre 2025</strong>
+  </footer>
+
+  <script>
+    // Date limite
+    const endDate = new Date("Sep 30, 2025 23:59:59").getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "❌ Offre terminée";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `⏳ Temps restant : ${days}j ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+
+</body>
+</html>
